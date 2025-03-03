@@ -3,12 +3,15 @@ import {
   UserCircleIcon,
   ChatBubbleLeftIcon,
   ArrowRightOnRectangleIcon,
-  ServerStackIcon, // More fitting icon for "Sign In"
+  ServerStackIcon,
+  FolderIcon, // Import the FolderIcon for projects
+  BriefcaseIcon, // Alternatively, you can use BriefcaseIcon
 } from "@heroicons/react/24/solid";
 import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
 import Users from "./pages/dashboard/users";
 import Message from "./pages/dashboard/message";
 import { SignIn } from "@/pages/auth";
+import Projects from "./pages/dashboard/projects";
 
 const icon = { className: "w-5 h-5 text-inherit" };
 
@@ -27,6 +30,12 @@ export const routes = [
         name: "المستخدمون",
         path: "/users",
         element: <Users />,
+      },
+      {
+        icon: <FolderIcon {...icon} />, // Use FolderIcon for projects
+        name: "المشاريع",
+        path: "/projects",
+        element: <Projects />,
       },
       {
         icon: <ChatBubbleLeftIcon {...icon} />,
